@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── 英文練習網站（保持原樣，勿動）─────────────────────────────────
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // ── 紐西蘭蜜月旅行知識網站（新增）────────────────────────────────
+    match /nzTripUsers/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+  }
+}

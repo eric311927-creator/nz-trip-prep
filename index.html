@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>紐西蘭蜜月行前準備</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="header-icon">🥝</span>
+        <div>
+          <div class="header-title">紐西蘭蜜月行前準備</div>
+          <div class="header-sub">Aotearoa 知識庫</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="user-name" class="user-name"></span>
+        <button id="sign-out-btn" class="btn-ghost" style="display:none">登出</button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="site-nav" style="display:none">
+    <div class="nav-inner">
+      <button class="nav-btn active" data-view="home">🏠 主頁</button>
+      <button class="nav-btn" data-view="review">📅 每日複習</button>
+      <button class="nav-btn" data-view="dashboard">📊 學習統計</button>
+    </div>
+  </nav>
+
+  <main id="app">
+    <!-- 內容由 app.js 動態渲染 -->
+    <div class="loading-screen">
+      <div class="loading-kiwi">🥝</div>
+      <p>載入中…</p>
+    </div>
+  </main>
+
+  <!-- Firebase SDK (compat 8.x，與英文練習網站相同版本) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- 應用程式腳本（載入順序不可調換）-->
+  <script src="firebase-config.js"></script>
+  <script src="lessons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
